@@ -39,11 +39,3 @@ class AnnealingModel:
             if exp1 and exp2 and exp3:
                 positives += 1
         return positives == len(self.expressions), positives
-                
-    
-        
-
-if __name__ == "__main__":
-    model = AnnealingModel(file='formulas/uf20-01.cnf')
-    print(model.expressions[:10])
-    print(model.n_expressions, len(model.variables))

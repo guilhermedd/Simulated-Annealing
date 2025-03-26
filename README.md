@@ -34,11 +34,8 @@ O **Simulated Annealing (SA)** é um algoritmo de otimização inspirado no proc
    ```
 2. Execute o script:
    ```bash
-   python simulated_annealing_sat.py
+   python main.py
    ```
-
-## 📚 Referências
-
 
 ---
 📌 **Autor:** Guilherme Diel  
