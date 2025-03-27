@@ -9,14 +9,16 @@ import os
 class AnnealingModel:
     def __init__(self, file):
         self.file = file
-        self.energy = 100
         self.expressions = []
-        self.current_temperature = 100_000
+        self.current_temperature = 100_000_000
         self._COOLING_RATE = 0.99
         self._MINIMUN_TEMPERATURE = 0.1
-        self._ITERATIONS_PER_TEMPERATURE = 200
-        self.energy_history = []  # Lista para armazenar o histórico de energias
+        self._ITERATIONS_PER_TEMPERATURE = 1_000
+        self.energy_history = []
+        self.frames = []  # Adicione esta linha
+        self.frame_interval = 10  # Adicione esta linha
         self.setup()
+        self._create_temp_dir()  # Adicione esta linha
 
     @property
     def is_done(self):
@@ -76,6 +78,7 @@ class AnnealingModel:
                     best_state = new_state
         return best_state
 
+
     def main(self):
         iteration = 0
         while self.current_temperature >= self._MINIMUN_TEMPERATURE and not self.is_done:
@@ -83,12 +86,16 @@ class AnnealingModel:
             self.current_temperature *= self._COOLING_RATE
             energy = self.calculate_energy(self.state)
             self.energy_history.append(energy)
+            
+            # Adicione este bloco para salvar frames periodicamente
+            if iteration % self.frame_interval == 0:
+                self._save_current_frame(iteration)
+                
             iteration += 1
             print(f"Iteração {iteration}: | Energia atual = {energy} | Temperatura atual = {self.current_temperature}")
 
         print(f"Treinamento concluído com energia final = {self.calculate_energy(self.state)}")
         self._generate_realtime_gif()
-
         return len(self.expressions) - self.calculate_energy(self.state)
     
     def _create_temp_dir(self):
