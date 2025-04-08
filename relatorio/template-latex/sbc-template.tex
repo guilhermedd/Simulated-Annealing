@@ -24,87 +24,114 @@
 \maketitle
 
 \begin{abstract}
-  This meta-paper describes the style to be used in articles and short papers
-  for SBC conferences. For papers in English, you should add just an abstract
-  while for the papers in Portuguese, we also ask for an abstract in
-  Portuguese (``resumo''). In both cases, abstracts should not have more than
-  10 lines and must be in the first page of the paper.
+  Abstract
 \end{abstract}
      
 \begin{resumo} 
-  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
-  resumos de artigos para publicação nos anais das conferências organizadas
-  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
-  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
-  Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
-  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
-  página do artigo.
+  Resumo
 \end{resumo}
 
 
-\section{General Information}
+\section{Introdução}
+% Contextualização do problema/tarefa e revisão da literatura.
 
-All full papers and posters (short papers) submitted to some SBC conference,
-including any supporting documents, should be written in English or in
-Portuguese. The format paper should be A4 with single column, 3.5 cm for upper
-margin, 2.5 cm for bottom margin and 3.0 cm for lateral margins, without
-headers or footers. The main font must be Times, 12 point nominal size, with 6
-points of space before each paragraph. Page numbers must be suppressed.
+Foi no século XX que se iniciou a busca pela resolução de problemas NP, NP-Hard e NP-Completo usando ferramentas computacionais. 
+%
+Estas portanto, foram, em sua maioria, desenvolvidos com base em algoritmos heurísticos – alicerçados em técnicas de busca de solução não necessariamente ótima, mas sim satisfatória –. 
+%
+Sendo assim, alguns destes tornaram-se mais disseminados na literatura científica, como a \textbf{Busca Gulosa}, \textbf{Algoritmo A*}, \textbf{Subida de Encosta} e \textbf{Simulated Annealing}. 
 
-Full papers must respect the page limits defined by the conference.
-Conferences that publish just abstracts ask for \textbf{one}-page texts.
+O método de \textbf{Simulated Annealing} teve sua lógica concebida a partir do método de anelização de materiais, Metropolis, desenvolvido por Gibbs em 1953 \cite{Gibbs}.
+%
+Basado na fabricação de aneis, este método usa como base o fato de que, quanto mais quente está o material, maior se torna a facilidade de modelá-lo.
+%
+Sob o mesmo ponto de vista, este método consiste em uma sequencia de temperaturas decrescentes em que, quanto maior a temperatura atual, mais aleatorizada são as otimizações geradas pelo algoritmo, sendo que, quando a temperatura chegar a um certo ponto idealizando a otimização do resultado conforme decresce a temperatura, até que esta se torne mínima.
 
-\section{First Page} \label{sec:firstpage}
+Um problema muito conhecido e discutido na literatura, que é capaz de ser resolvido por algoritmos heuristicos, é o problema da satisfabilidade (SAT), que consiste em, dado um conjunto de cláusulas disjuntivas na forma normal conjuntiva, determinar se existe uma atribuição de valores lógicos (\textit{verdadeiro} ou \textit{falso}) às variáveis envolvidas que satisfaça toda a expressão.
+%
+Cada cláusula é composta por uma disjunção (operador lógico $\lor$) de literais (variáveis ou suas negações), e a fórmula booleana global é uma conjunção (operador lógico $\land$) dessas cláusulas. Formalmente:
 
-The first page must display the paper title, the name and address of the
-authors, the abstract in English and ``resumo'' in Portuguese (``resumos'' are
-required only for papers written in Portuguese). The title must be centered
-over the whole page, in 16 point boldface font and with 12 points of space
-before itself. Author names must be centered in 12 point font, bold, all of
-them disposed in the same line, separated by commas and with 12 points of
-space after the title. Addresses must be centered in 12 point font, also with
-12 points of space after the authors' names. E-mail addresses should be
-written using font Courier New, 10 point nominal size, with 6 points of space
-before and 6 points of space after.
+\begin{equation}
+\bigwedge_{i=1}^{m} \left( \bigvee_{j=1}^{k} l_{ij} \right)
+\end{equation}
 
-The abstract and ``resumo'' (if is the case) must be in 12 point Times font,
-indented 0.8cm on both sides. The word \textbf{Abstract} and \textbf{Resumo},
-should be written in boldface and must precede the text.
+Ao longo deste relatório, será abordado uma proposta de implementação de do \textbf{Simulated Annealing} para resolução de uma variante do SAT, conhecido como SAT-3, que consiste em três variáveis por cláusula no problema SAT.
 
-\section{CD-ROMs and Printed Proceedings}
-
-In some conferences, the papers are published on CD-ROM while only the
-abstract is published in the printed Proceedings. In this case, authors are
-invited to prepare two final versions of the paper. One, complete, to be
-published on the CD and the other, containing only the first page, with
-abstract and ``resumo'' (for papers in Portuguese).
-
-\section{Sections and Paragraphs}
-
-Section titles must be in boldface, 13pt, flush left. There should be an extra
-12 pt of space before each title. Section numbering is optional. The first
-paragraph of each section should not be indented, while the first lines of
-subsequent paragraphs should be indented by 1.27 cm.
-
-\subsection{Subsections}
-
-The subsection titles must be in boldface, 12pt, flush left.
-
-\section{Figures and Captions}\label{sec:figs}
+Este relatório está organizado da seguinte maneira: a seção 2 apresenta estratégias utilizadas, descrições, justificativas de escolhas, fórmulas utilizadas e descrições. Em seguida, na seção 3 são abordadas descrições dos experimentos, configurações utilizadas e descrições dos resultados obtidos. Outrossim, na seção 4 expõem-se considerações sobre os resultados obtidos e análises críticas sobre os mesmos. Por fim, na seção 5 mostra-se considerações sobre o trabalho desenvolvido e identificação de direcionamentos futuros na pesquisa.
 
 
-Figure and table captions should be centered if less than one line
-(Figure~\ref{fig:exampleFig1}), otherwise justified and indented by 0.8cm on
-both margins, as shown in Figure~\ref{fig:exampleFig2}. The caption font must
-be Helvetica, 10 point, boldface, with 6 points of space before and after each
-caption.
+% Justificativa e motivação.
+% Objetivo.
+% Organização do texto.
+
+\section{Metodologia de Desenvolvimento} \label{sec:firstpage}
+
+O método de \textbf{Simulated Annealing} consiste em:
+\begin{enumerate}
+  
+  \item Para uma temperatura $T_i$, realizar $N$ vezes: \label{passo:1}
+  \begin{itemize}
+    \item Realizar uma perturbação aleatória no estado atual $\text{estado}_0$, gerando um novo $\text{estado}_i$
+    \item Calcular a variação de energia $\Delta E = E(\text{estado}_i) - E(\text{estado}_0)$
+    \item Se $\Delta E < 0$ (melhora na energia), aceitar a transição ($\text{estado}_i \rightarrow \text{estado}_0$)
+    \item Caso contrário, aceitar a transição com probabilidade P_{\text{accept}}($T_i$)
+  \end{itemize}
+  
+  \item Critério de parada:
+  \begin{itemize}
+    \item Se $T_i \leq T_f$ (temperatura final) ou o sistema atingir convergência (e.g., $\Delta E \approx 0$ por $k$ iterações consecutivas)
+    \item Retornar o $\text{estado}_0$ como solução
+    \item Caso contrário, reduzir a temperatura ($T_i \leftarrow \alpha T_i$, com $0 < \alpha < 1$) e retornar ao Passo~\ref{passo:1}
+  \end{itemize}
+  \label{pseudocodigo}
+  \caption{Passo a passo do método de \textbf{Simulated Annealing}}
+\end{enumerate} 
+
+A aplicação do método de \textbf{Simulated Annealing} para a otimização do problema do SAT-3 foi realizada por meio da linguagem de programação \textit{Python}, junto com a biblioteca \textit{Numpy}.
+%
+A Figura \ref{fig:metodologia} retrata o passo a passo de como foi implementado este algoritmo.
+%
+O passo 1 (inicialização) consiste em realizar a inicialização do sistema:
+
+\begin{itemize}
+  \item Temperatura inicial $T_0$ = 1000
+  \item Taxa de resfriamento \alpha = 0.99
+  \item Temperatura final $T_f$ = 0.1
+  \item Número de iterações por temperatura $N$ = 1000
+\end{itemize}
+
+No segundo passo (iteração por temperatura) da Figura \ref{fig:metodologia} a fórmula de probabilidade de aceitação de estados com pior energia que foi adotada, foi:
+\begin{equation}
+  P_{\text{accept}} = \exp\left(-\frac{\Delta E}{T_i}\right)
+\end{equation}
+
+O terceiro passo (resfriamento) corresponde ao passo \ref{passo:1} do codigo de \ref{pseudocodigo}.
 
 \begin{figure}[ht]
-\centering
-\includegraphics[width=.5\textwidth]{fig1.jpg}
-\caption{A typical figure}
-\label{fig:exampleFig1}
-\end{figure}
+  \centering
+  \includegraphics[width=1\textwidth]{pasta_.jpeg}
+  \caption{A typical figure}
+  \label{fig:metodologia}
+  \end{figure}
+% descrições e justificativas das escolhas.
+% Fórmulas utilizadas, descrições e justificativas.
+
+\section{Descrição de Experimentos/Simulações e Resultados Obtidos}
+
+Descrição dos experimentos e configurações utilizadas.
+Descrição dos resultados obtidos (Figuras, Tabelas, Gráficos).
+
+\section{Análise dos resultados obtidos.}
+
+Considerações sobre os resultados obtidos e análises críticas sobre os mesmos.
+
+\section{Conclusões e Trabalhos Futuros}\label{sec:figs}
+
+
+Considerações sobre o trabalho desenvolvidos e identificação de direcionamentos futuros na
+pesquisa.
+
+
 
 \begin{figure}[ht]
 \centering
@@ -113,13 +140,6 @@ caption.
   line and justified considering margins mentioned in Section~\ref{sec:figs}.}
 \label{fig:exampleFig2}
 \end{figure}
-
-In tables, try to avoid the use of colored or shaded backgrounds, and avoid
-thick, doubled, or unnecessary framing lines. When reporting empirical data,
-do not use more decimal digits than warranted by their precision and
-reproducibility. Table caption must be placed before the table (see Table 1)
-and the font used must also be Helvetica, 10 point, boldface, with 6 points of
-space before and after each caption.
 
 \begin{table}[ht]
 \centering
