@@ -152,12 +152,12 @@ INPUT ./250_entries_plot.jpg
 INPUT ./250_entries_plot.jpg
 INPUT ./250_entries_plot.jpg
 INPUT ./250_entries_plot.jpg
-INPUT ./sbc-template.bbl
-INPUT ./sbc-template.bbl
-INPUT sbc-template.bbl
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/helvetic/phvb7t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
+INPUT ./sbc-template.bbl
+INPUT ./sbc-template.bbl
+INPUT sbc-template.bbl
 INPUT sbc-template.aux
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
