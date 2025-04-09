@@ -30,6 +30,7 @@
 
 
 \section{Introdução}
+\label{sec:introducao}
 % Contextualização do problema/tarefa e revisão da literatura.
 
 Foi no século XX que se iniciou a busca pela resolução de problemas NP, NP-Hard e NP-Completo usando ferramentas computacionais. 
@@ -61,7 +62,8 @@ Este relatório está organizado da seguinte maneira: a seção 2 apresenta estr
 % Objetivo.
 % Organização do texto.
 
-\section{Metodologia de Desenvolvimento} \label{sec:firstpage}
+\section{Metodologia de Desenvolvimento}
+\label{sec:metodologia_de_desenvolvimento}
 
 O método de \textbf{Simulated Annealing} consiste em:
 \begin{enumerate}
@@ -114,6 +116,7 @@ O terceiro passo (resfriamento) corresponde ao passo \ref{passo:1} do codigo de 
 % Fórmulas utilizadas, descrições e justificativas.
 
 \section{Descrição de Experimentos/Simulações e Resultados Obtidos}
+\label{sec:descicao_de_experimentos_/_simulacoes_e_resultados_obtidos}
 
 % Descrição dos experimentos
 % e configurações utilizadas.
@@ -126,27 +129,27 @@ Nestas configurações foram obtidos resultados para bases de SAT-3 de 20, 100 e
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=.5\textwidth]{20_entries_plot.jpg}
-  \caption{20 Entradas}
+  \includegraphics[width=.9\textwidth]{../../melhores_sa_20.png}
+  \caption{Convergência para 20 entradas}
   \label{fig:metodologia}
   \end{figure}
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=.5\textwidth]{100_entries_plot.jpg}
-  \caption{100 Entradas}
+  \includegraphics[width=.9\textwidth]{../../melhores_sa_100.png}
+  \caption{Convergência para 100 entradas}
   \label{fig:metodologia}
    \end{figure}
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=.5\textwidth]{250_entries_plot.jpg}
-  \caption{250 Entradas}
+  \includegraphics[width=.9\textwidth]{../../melhores_sa_250.png}
+  \caption{Convergência para 250 entradas}
   \label{fig:metodologia}
   \end{figure}
 
 
-Além disso, é possível verificar a seguinte tabela com média e desvio padrão
+Além disso, é possível verificar a seguinte tabela com média e desvio padrão de 30 execuções do experimento, apontados pelos consecutivos boxplots.
 
 \begin{table}[ht!]
 \centering
@@ -161,12 +164,31 @@ Além disso, é possível verificar a seguinte tabela com média e desvio padrã
 \label{tab:resultados}
 \end{table}
 
-Por fim, um gráfico Boxplot
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=.9\textwidth]{../../boxplot_20.png}
+  \caption{Boxplots para 20 entradas}
+  \label{fig:metodologia}
+  \end{figure}
 
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=.9\textwidth]{../../boxplot_100.png}
+  \caption{Boxplots para 100 entradas}
+  \label{fig:metodologia}
+   \end{figure}
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=.9\textwidth]{../../boxplot_250.png}
+  \caption{Boxplots para 250 entradas}
+  \label{fig:metodologia}
+  \end{figure}
 
 Dessa maneira, é possível obter uma visão aprofundada da execução do algoritmo, discutida na seção a seguir.
 
 \section{Análise dos resultados obtidos.}
+\label{sec:analise_dos_resultados_obtidos}
 
 % Considerações sobre os resultados obtidos e análises críticas sobre os mesmos.
 Factualmente, torna-se óbvia a observação de que
@@ -174,7 +196,8 @@ Factualmente, torna-se óbvia a observação de que
 
 A partir disso, surgem diversas ideias sobre o trabalho desenvolvido e direcionamentos futuros, abordados na seção a seguir.
 
-\section{Conclusões e Trabalhos Futuros}\label{sec:figs}
+\section{Conclusões e Trabalhos Futuros}
+\label{sec:conclusoes_e_trabalhos_futuros}
 
 
 Considerações sobre o trabalho desenvolvidos e identificação de direcionamentos futuros na
