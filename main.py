@@ -1,45 +1,92 @@
 import matplotlib.pyplot as plt
-import multiprocessing
 from src.annealing_model import AnnealingModel
+import numpy as np
+import statistics
 
-def run_experiment(i, file, results, lock):
-    """Exécute une simulation et enregistre le résultat en toute sécurité."""
-    model = AnnealingModel(file=file, iteration=i)
-    print(model)
-    energy, n_iterations, final_temp = model.main()
-    
-    with lock:  
-        print(f"Equações resolvidas ({i}): {energy}")
-        results.append(energy)
+def run_experiment(file, sa_max=1):
+    """Executa uma simulação e retorna os históricos."""
+    model = AnnealingModel(file=file, sa_max=sa_max)
+    energy, temperature_history, energy_history = model.main()
+    return energy, temperature_history, energy_history
 
-def plot_boxplot(data):
-    """Affiche un boxplot des résultats."""
+def plot_best_runs(best_runs, file):
+    """Plota 3 subplots com os melhores resultados (menor energia) para cada SA_MAX."""
+    fig, axs = plt.subplots(1, 3, figsize=(18, 5), sharex=True)
+
+    for i, (sa_max, energy_history, temperature_history) in enumerate(best_runs):
+        ax1 = axs[i]
+        ax1.set_title(f'SA_MAX = {sa_max}')
+        ax1.set_xlabel('Iterações')
+        ax1.set_ylabel('Energia', color='tab:blue')
+        ax1.plot(energy_history, 'b-', label='Energia')
+        ax1.tick_params(axis='y', labelcolor='tab:blue')
+
+        ax2 = ax1.twinx()
+        ax2.set_ylabel('Temperatura', color='tab:red')
+        ax2.plot(temperature_history, 'r-', label='Temperatura')
+        ax2.tick_params(axis='y', labelcolor='tab:red')
+
+    plt.tight_layout()
+    plt.savefig(f'melhores_sa_{file}.png')
+    plt.close()
+
+def plot_boxplot(data, file):
+    """Plota boxplot dos resultados finais (30 execuções por SA_MAX)."""
     plt.figure(figsize=(8, 6))
     plt.boxplot(data, vert=True, patch_artist=True, boxprops=dict(facecolor='lightblue'))
-    plt.title('Distribuição das Equações Resolvidas')
-    plt.ylabel('Equações Resolvidas')
+    plt.title('Distribuição das Energias Finais (30 execuções)')
+    plt.xticks(ticks=[1, 2, 3], labels=[f'SA_MAX = {x}' for x in [1, 5, 10]])
+    plt.ylabel('Energia Final')
     plt.grid(True, linestyle='--', alpha=0.6)
     plt.savefig(f'boxplot_{file}.png')
+    plt.close()
 
 if __name__ == "__main__":
-    file = 250
-    manager = multiprocessing.Manager() 
-    results = manager.list()  
-    lock = multiprocessing.Lock() 
+    files = [20, 100, 250]
+    SA_MAXES = [1, 5, 10]
+    all_stats = {}  # file -> lista de 3 listas (uma por SA_MAX)
 
-    processes = []
-    num_processes = 6
-    k = 0
-    
-    for i in range(int(1, (30/num_processes) + 1)):
-        for j in range(num_processes):
-            p = multiprocessing.Process(target=run_experiment, args=(f'formulas/uf{file}-01.cnf', k, results, lock))
-            processes.append(p)
-            p.start()
-            k += 1
+    for file in files:
+        best_runs = []
+        stats_por_file = []
 
-        for p in processes:
-            p.join()
-        
+        for sa_max in SA_MAXES:
+            resultados = []  # energia final
+            energias = []    # lista dos vetores energia por iteração
+            temperaturas = []  # lista dos vetores temperatura por iteração
 
-    plot_boxplot(file, results)
+            for i in range(30):
+                energia_final, temperatura_hist, energia_hist = run_experiment(file=f"formulas/uf{file}-01.cnf", sa_max=sa_max)
+                resultados.append(energia_final)
+                energias.append(energia_hist)
+                temperaturas.append(temperatura_hist)
+
+            # salvar resultados para a média e desvio
+            stats_por_file.append(resultados)
+
+            # escolher melhor execução (menor energia final)
+            best_index = np.argmin(resultados)
+            best_energy = energias[best_index]
+            best_temp = temperaturas[best_index]
+            best_runs.append((sa_max, best_energy, best_temp))
+
+        all_stats[file] = stats_por_file
+
+        # Plots
+        plot_best_runs(best_runs, file)
+        plot_boxplot(stats_por_file, file)
+
+    # Gerar tabela com médias e desvios
+    with open("tabela_medias_desvios.txt", "w") as f:
+        f.write("Arquivo\tSA_MAX\tMédia Energia Final\tDesvio Padrão\n")
+        f.write("=" * 50 + "\n")
+
+        for file in files:
+            f.write(f"uf{file}-01.cnf\n")
+            sa_energias = all_stats[file]
+            for idx, sa_max in enumerate(SA_MAXES):
+                energias = sa_energias[idx]
+                media = statistics.mean(energias)
+                desvio = statistics.stdev(energias)
+                f.write(f"\tSA={sa_max}\t{media:.2f}\t\t\t{desvio:.2f}\n")
+            f.write("\n")

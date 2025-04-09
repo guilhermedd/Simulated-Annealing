@@ -5,14 +5,13 @@ import copy
 import matplotlib.pyplot as plt
 
 class AnnealingModel:
-    def __init__(self, file, iteration):
-        self.iteration = iteration
+    def __init__(self, file, sa_max):
         self.file = file
         self.expressions = []
         self.current_temperature = 1000
         self._COOLING_RATE = 0.99
         self._MINIMUN_TEMPERATURE = 0.1
-        self._ITERATIONS_PER_TEMPERATURE = 1_000
+        self.SA_MAX = sa_max
         self.energy_history = []
         self.temperature_history = []
         self.setup()
@@ -66,7 +65,7 @@ class AnnealingModel:
 
     def iteration_on_temp(self):
         best_state = copy.copy(self.state)
-        for _ in range(self._ITERATIONS_PER_TEMPERATURE):
+        for _ in range(self.SA_MAX):
             new_state = self.get_random_state(best_state)
             delta = self.calculate_delta(best_state, new_state)
             if delta < 0:
@@ -79,6 +78,7 @@ class AnnealingModel:
     def main(self):
         iteration = 0
         while self.current_temperature >= self._MINIMUN_TEMPERATURE and not self.is_done:
+            print("iTERACAO 1")
             self.state = self.iteration_on_temp()
             self.current_temperature *= self._COOLING_RATE
             energy = self.calculate_energy(self.state)
@@ -87,28 +87,8 @@ class AnnealingModel:
             self.temperature_history.append(self.current_temperature)
             
             iteration += 1
-            print(f"Iteração {iteration}: | Energia atual = {energy} | Temperatura atual = {self.current_temperature}")
         
-        print(f"Treinamento concluído com energia final = {self.calculate_energy(self.state)}")
-        self.plot_results()
-        return self.calculate_energy(self.state), iteration, self.current_temperature
+        return self.calculate_energy(self.state), self.temperature_history, self.energy_history
     
-    def plot_results(self):
-        fig, ax1 = plt.subplots()
-        
-        ax1.set_xlabel('Iterações')
-        ax1.set_ylabel('Energia', color='tab:blue')
-        ax1.plot(self.energy_history, 'b-', label='Energia')
-        ax1.tick_params(axis='y', labelcolor='tab:blue')
-        
-        ax2 = ax1.twinx()
-        ax2.set_ylabel('Temperatura', color='tab:red')
-        ax2.plot(self.temperature_history, 'r-', label='Temperatura')
-        ax2.tick_params(axis='y', labelcolor='tab:red')
-        
-        fig.tight_layout()
-        plt.title('Evolução da Energia e Temperatura')
-        plt.savefig(f'iteration_{self.iteration}.png')
-
     def __str__(self):
         return f"Quantidade de expressões: {len(self.expressions)}\nQuantidade de variáveis: {len(self.state)}"
