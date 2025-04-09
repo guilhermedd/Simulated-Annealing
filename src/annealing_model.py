@@ -78,7 +78,6 @@ class AnnealingModel:
     def main(self):
         iteration = 0
         while self.current_temperature >= self._MINIMUN_TEMPERATURE and not self.is_done:
-            print("iTERACAO 1")
             self.state = self.iteration_on_temp()
             self.current_temperature *= self._COOLING_RATE
             energy = self.calculate_energy(self.state)
