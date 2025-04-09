@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex sbc-template"] 1744141000.54195 "sbc-template.aux" "sbc-template.bbl" "sbc-template" 1744141163.74549 2
+["bibtex sbc-template"] 1744195866.83129 "sbc-template.aux" "sbc-template.bbl" "sbc-template" 1744195884.47816 2
   "./sbc-template.bib" 1744039031.21881 725 bdc459d9953eda08f21705ef20e3b912 ""
   "./sbc.bst" 1744039039.26342 21864 a668496cca21cfdd211f7fb5f0d57565 ""
-  "sbc-template.aux" 1744141163.32302 2216 70b141aab27ff43362fbdca3256eff1d "pdflatex"
+  "sbc-template.aux" 1744195884.2321 1389 f35b8b2690b6b55a7898182037361063 "pdflatex"
   (generated)
   "sbc-template.bbl"
   "sbc-template.blg"
   (rewritten before read)
-["pdflatex"] 1744141162.66842 "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1744141163.74574 2
-  "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" 1744141161.22017 7842 81c299f01ffa7c5585c859d5dcfe00fd ""
+["pdflatex"] 1744195883.82982 "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1744195884.47831 2
+  "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" 1744195883.2151 6509 17c8b4466c42e36298e66789ef64e421 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -94,13 +94,11 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1741576083 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741576009 3345735 cd75e12310bf637a788e14a774aa4386 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "fig2.jpg" 1744039028.32422 22945 a28e60c395d91384d9e32be051b6cd94 ""
   "pasta_.jpeg" 1744136168.51363 109958 238620760059d4fc70e47de9895be883 ""
-  "sbc-template.aux" 1744141163.32302 2216 70b141aab27ff43362fbdca3256eff1d "pdflatex"
-  "sbc-template.bbl" 1744141000.70117 0 d41d8cd98f00b204e9800998ecf8427e "bibtex sbc-template"
+  "sbc-template.aux" 1744195884.2321 1389 f35b8b2690b6b55a7898182037361063 "pdflatex"
+  "sbc-template.bbl" 1744195866.92696 0 d41d8cd98f00b204e9800998ecf8427e "bibtex sbc-template"
   "sbc-template.sty" 1744039036.70466 6074 ecc54df5124d8db4ac67c42cc728f3a5 ""
-  "sbc-template.tex" 1744141161.22017 7842 81c299f01ffa7c5585c859d5dcfe00fd ""
-  "table.jpg" 1744039040.20875 50466 e26ebe2ae26ae6e4a5f0aceac1320ded ""
+  "sbc-template.tex" 1744195883.2151 6509 17c8b4466c42e36298e66789ef64e421 ""
   (generated)
   "sbc-template.aux"
   "sbc-template.log"
