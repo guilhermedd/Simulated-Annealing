@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex sbc-template"] 1744196347.64879 "sbc-template.aux" "sbc-template.bbl" "sbc-template" 1744196688.31702 0
+["bibtex sbc-template"] 1744197112.37565 "sbc-template.aux" "sbc-template.bbl" "sbc-template" 1744197127.06295 2
   "./sbc-template.bib" 1744039031.21881 725 bdc459d9953eda08f21705ef20e3b912 ""
   "./sbc.bst" 1744039039.26342 21864 a668496cca21cfdd211f7fb5f0d57565 ""
-  "sbc-template.aux" 1744196688.0906 2063 4b078468c239311d9414156dbd0156bd "pdflatex"
+  "sbc-template.aux" 1744197126.82043 2063 67fb22b928774050d3bc989265f243bd "pdflatex"
   (generated)
   "sbc-template.bbl"
   "sbc-template.blg"
   (rewritten before read)
-["pdflatex"] 1744196687.69022 "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1744196688.31718 2
-  "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" 1744196686.87523 7091 c22324dde8edf3adc8a9eecd062fcc53 ""
+["pdflatex"] 1744197126.41359 "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1744197127.0631 2
+  "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" 1744197125.40933 7148 06289893db661b80adfff1a95f27e868 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -98,10 +98,10 @@
   "20_entries_plot.jpg" 1744196646.90105 70468 f528255cd1e3c19234cabe1a87282259 ""
   "250_entries_plot.jpg" 1744196646.89179 55278 2a4c064cccf93a0ea268cf5790968318 ""
   "pasta_.jpeg" 1744136168.51363 109958 238620760059d4fc70e47de9895be883 ""
-  "sbc-template.aux" 1744196688.0906 2063 4b078468c239311d9414156dbd0156bd "pdflatex"
-  "sbc-template.bbl" 1744196419.81553 49 0eba253fc001332e731e8aba3f23127b "bibtex sbc-template"
+  "sbc-template.aux" 1744197126.82043 2063 67fb22b928774050d3bc989265f243bd "pdflatex"
+  "sbc-template.bbl" 1744197112.4687 0 d41d8cd98f00b204e9800998ecf8427e "bibtex sbc-template"
   "sbc-template.sty" 1744039036.70466 6074 ecc54df5124d8db4ac67c42cc728f3a5 ""
-  "sbc-template.tex" 1744196686.87523 7091 c22324dde8edf3adc8a9eecd062fcc53 ""
+  "sbc-template.tex" 1744197125.40933 7148 06289893db661b80adfff1a95f27e868 ""
   (generated)
   "sbc-template.aux"
   "sbc-template.log"
