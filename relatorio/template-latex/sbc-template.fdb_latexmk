@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex sbc-template"] 0 "sbc-template.aux" "sbc-template.bbl" "sbc-template" 1744273440.75391 -1
-  "./sbc-template.bib" 1744039031.21881 725 bdc459d9953eda08f21705ef20e3b912 ""
+["bibtex sbc-template"] 1744274141.63965 "sbc-template.aux" "sbc-template.bbl" "sbc-template" 1744274194.95942 0
+  "./sbc-template.bib" 1744274141.46591 1162 fae22a528faf134bb27c14a20797f444 ""
   "./sbc.bst" 1744039039.26342 21864 a668496cca21cfdd211f7fb5f0d57565 ""
-  "sbc-template.aux" 1744273440.48612 3729 bfdf7bdb50398ba13068eee605086e67 "pdflatex"
+  "sbc-template.aux" 1744274194.7068 3785 69126126d7a27d641cf5b2abb67a7d3f "pdflatex"
   (generated)
   "sbc-template.bbl"
   "sbc-template.blg"
   (rewritten before read)
-["pdflatex"] 1744273439.48132 "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1744273440.75405 2
+["pdflatex"] 1744274193.65008 "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1744274194.95956 2
   "../../boxplot_100.png" 1744272740.30987 24546 689bae66e7eaa2157c05868e273436e3 ""
   "../../boxplot_20.png" 1744272618.84186 26398 5be4074994b004399bf490d2e1f226f7 ""
   "../../boxplot_250.png" 1744273038.96477 23664 fe75be2fe894a0a1e32d79f440e0499b ""
   "../../melhores_sa_100.png" 1744272740.26842 85843 aab35ac743bc782eaefcd6256076ea4f ""
   "../../melhores_sa_20.png" 1744272618.79476 99980 0f98ba00b80a74eb1d0c11ade79a9b05 ""
   "../../melhores_sa_250.png" 1744273038.92363 80073 da7ae51f115736de1dc0389a7633dd33 ""
-  "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" 1744273437.73697 9961 2bec9a447a660b049b52b5928968a133 ""
+  "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" 1744274193.36082 10015 96925c546c6fff529f925fbf9fba8dc9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -102,10 +102,10 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741576009 3345735 cd75e12310bf637a788e14a774aa4386 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "pasta_.jpeg" 1744136168.51363 109958 238620760059d4fc70e47de9895be883 ""
-  "sbc-template.aux" 1744273440.48612 3729 bfdf7bdb50398ba13068eee605086e67 "pdflatex"
-  "sbc-template.bbl" 1744271012.93218 49 0eba253fc001332e731e8aba3f23127b "bibtex sbc-template"
+  "sbc-template.aux" 1744274194.7068 3785 69126126d7a27d641cf5b2abb67a7d3f "pdflatex"
+  "sbc-template.bbl" 1744274141.75169 49 0eba253fc001332e731e8aba3f23127b "bibtex sbc-template"
   "sbc-template.sty" 1744039036.70466 6074 ecc54df5124d8db4ac67c42cc728f3a5 ""
-  "sbc-template.tex" 1744273437.73697 9961 2bec9a447a660b049b52b5928968a133 ""
+  "sbc-template.tex" 1744274193.36082 10015 96925c546c6fff529f925fbf9fba8dc9 ""
   (generated)
   "sbc-template.aux"
   "sbc-template.log"
