@@ -222,6 +222,10 @@ Dessa maneira, é possível obter uma visão aprofundada da execução do algori
 % Considerações sobre os resultados obtidos e análises críticas sobre os mesmos.
 Factualmente, torna-se óbvia a observação de que entradas menores produzem resultados limitados, assemelhando-se mais a buscas aleatórias --- principalmente com SA\_MAX em 10 --- enquanto entradas maiores produzem resultados mais satisfatórios, com uma convergência mais acentuada.
 
+Por outro lado, a convergência para 100 entradas, com SA\_MAX, traz resultados mais satisfatórios, com uma média de 3.93 e desvio padrão de 1.48, enquanto para 250 entradas a média é de 9.93 e desvio padrão de 2.48, como relatado na Tabela \ref{tab:resultados}.
+%
+Além disso, pode-se observar com os boxplots que, com o aumento do número de entradas, os resultados tornam-se mais homogêneos, relatável pelo desvio padrão, que diminui conforme o número de entradas aumenta.
+Em suma, os resultados obtidos demonstram que o algoritmo de \textbf{Simulated Annealing} é capaz de resolver o problema SAT-3, com uma convergência satisfatória e resultados consistentes, principalmente para grandes entradas, tornando possível quantizar a eficiência do teorema de Gibbs, proposto em 1953.
 
 A partir disso, surgem diversas ideias sobre o trabalho desenvolvido e direcionamentos futuros, abordados na seção a seguir.
 
