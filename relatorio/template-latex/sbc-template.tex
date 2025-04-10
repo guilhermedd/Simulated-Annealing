@@ -26,7 +26,7 @@
 
      
 \begin{resumo} 
-  Resumo
+  Algoritmos heurísticos se alicerçam em técnicas de busca de solução satisfatória. Um deles é o \textbf{Simulated Annealing}, que se baseia no processo de resfriamento de metais. Este algoritmo é capaz de resolver problemas NP-Hard e NP-Completo, como o problema SAT-3, que consiste em determinar se existe uma atribuição de valores lógicos que satisfaça uma expressão booleana. Neste trabalho, apresentamos uma implementação do \textbf{Simulated Annealing} para resolver o problema SAT-3, com resultados satisfatórios e consistentes, principalmente para entradas maiores. Além disso, discutimos possíveis aplicações futuras e comparações com outras abordagens.
 \end{resumo}
 
 
@@ -96,7 +96,7 @@ O passo 1 (inicialização) consiste em realizar a inicialização do sistema:
 \begin{itemize}
   \item Temperatura inicial $T_0$ = 1000
   \item Taxa de resfriamento \alpha = 0.99
-  \item Temperatura final $T_f$ = 0.1
+  \item Temperatura final \(T_f = 0.1\)
   \item Número de iterações por temperatura $N$ = 1000
 \end{itemize}
 
@@ -232,11 +232,14 @@ A partir disso, surgem diversas ideias sobre o trabalho desenvolvido e direciona
 \section{Conclusões e Trabalhos Futuros}
 \label{sec:conclusoes_e_trabalhos_futuros}
 
+% Considerações sobre o trabalho desenvolvidos e identificação de direcionamentos futuros na pesquisa.
+Tendo em vista o trabalho desenvolvido, é possível concluir que o algoritmo de \textbf{Simulated Annealing} é uma ferramenta poderosa para a resolução do problema SAT-3, apresentando resultados satisfatórios e consistentes, principalmente para entradas maiores.
 
-Considerações sobre o trabalho desenvolvidos e identificação de direcionamentos futuros na
-pesquisa.
+De tal maneira, é possível identificar outras aplicações para a pesquisa em trabalhos futuros, como a aplicação do algoritmo em outros problemas NP-Hard e NP-Completo, como o \textbf{Problema do Caixeiro Viajante} ou o \textbf{Problema de Otimização de Roteamento}, pode trazer novas perspectivas e resultados interessantes.
 
+Além disso, surge o interesse em comparar esta com outras abordagens como a \textbf{Escalada de Encosta} e \textbf{Busca Tabu}, para verificar a eficiência e eficácia de cada uma delas em diferentes contextos e problemas. Dessa forma, tais comparações podem contribuir para o avanço do conhecimento na área de algoritmos heurísticos e otimização por meio de inteligência artificial, podendo usar diversas técnicas de análise de desempenho e estatística.
 
+Por fim, a implementação do algoritmo em outras linguagens de programação, como \textit{C++} ou \textit{Java}, pode trazer novas perspectivas e resultados interessantes, além de possibilitar a comparação entre diferentes implementações e otimizações, podendo usar a tal para comparar a eficiência e eficácia de cada uma delas em diferentes contextos e problemas.
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}
