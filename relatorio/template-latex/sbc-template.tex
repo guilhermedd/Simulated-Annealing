@@ -155,15 +155,43 @@ Além disso, é possível verificar a seguinte tabela com média e desvio padrã
 \begin{table}[H]
 \centering
 \caption{Média e Desvio Padrão dos Resultados Obtidos}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{Número de Entradas} & \textbf{Média} & \textbf{Desvio Padrão} \\ \hline
-20 & 0.85 & 0.05 \\ \hline
-100 & 0.78 & 0.07 \\ \hline
-250 & 0.72 & 0.09 \\ \hline
+\textbf{SAMAX} & \textbf{Número de Entradas} & \textbf{Média} & \textbf{Desvio Padrão} \\ \hline
+1   & 20 & 0.80 & 0.85 \\ \hline
+5   & 20 & 0.17 & 0.53 \\ \hline
+10  & 20 & 0.03 & 0.18 \\ \hline
+1   & 100 & 12.43 & 3.09 \\ \hline
+5   & 100 & 5.67 & 1.56 \\ \hline
+10  & 100 & 3.93 & 1.48 \\ \hline
+1   & 250 & 43.53 & 6.25 \\ \hline
+5   & 250 & 16.10 & 3.29 \\ \hline
+10  & 250 & 9.93 & 2.48 \\ \hline
+
 \end{tabular}
 \label{tab:resultados}
 \end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{Média e Desvio Padrão do Histórico dos Resultados Obtidos}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{SAMAX} & \textbf{Número de Entradas} & \textbf{Média} & \textbf{Desvio Padrão} \\ \hline
+    1   & 20 & 6.50 & 3.47 \\ \hline
+    5   & 20 & 7.18 & 3.39 \\ \hline
+    10  & 20 & 7.34 & 3.22 \\ \hline
+    1   & 100 & 35.14 & 11.74 \\ \hline
+    5   & 100 & 31.41 & 13.39 \\ \hline
+    10  & 100 & 30.70 & 14.16 \\ \hline
+    1   & 250 & 90.75 & 23.46 \\ \hline
+    5   & 250 & 78.44 & 30.06 \\ \hline
+    10  & 250 & 75.82 & 32.76 \\ \hline
+  
+  \end{tabular}
+  \label{tab:resultados}
+  \end{table}
+
 
 \begin{figure}[H]
   \centering
@@ -192,7 +220,7 @@ Dessa maneira, é possível obter uma visão aprofundada da execução do algori
 \label{sec:analise_dos_resultados_obtidos}
 
 % Considerações sobre os resultados obtidos e análises críticas sobre os mesmos.
-Factualmente, torna-se óbvia a observação de que entradas menores produzem resultados limitados, assemelhando-se mais a buscas aleatórias, enquanto entradas maiores produzem resultados mais satisfatórios, com uma convergência mais acentuada.
+Factualmente, torna-se óbvia a observação de que entradas menores produzem resultados limitados, assemelhando-se mais a buscas aleatórias --- principalmente com SA\_MAX em 10 --- enquanto entradas maiores produzem resultados mais satisfatórios, com uma convergência mais acentuada.
 
 
 A partir disso, surgem diversas ideias sobre o trabalho desenvolvido e direcionamentos futuros, abordados na seção a seguir.

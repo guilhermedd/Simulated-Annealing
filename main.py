@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from src.annealing_model import AnnealingModel
 import numpy as np
 import statistics
+from itertools import chain
 
 def run_experiment(file, sa_max=1):
     """Executa uma simulação e retorna os históricos."""
@@ -55,11 +56,27 @@ if __name__ == "__main__":
             energias = []    # lista dos vetores energia por iteração
             temperaturas = []  # lista dos vetores temperatura por iteração
 
+            
             for i in range(30):
                 energia_final, temperatura_hist, energia_hist = run_experiment(file=f"formulas/uf{file}-01.cnf", sa_max=sa_max)
                 resultados.append(energia_final)
                 energias.append(energia_hist)
                 temperaturas.append(temperatura_hist)
+                
+            flat_energies = list(chain.from_iterable(energias))
+            mean_energies = statistics.mean(flat_energies)
+            std_energies = statistics.stdev(flat_energies)
+            mean_results = statistics.mean(resultados)
+            std_results = statistics.stdev(resultados)
+            with open("resultados.txt", "a", encoding="utf-8") as f:
+                f.write("\nEnergias\n")
+                print("Energias")
+                f.write(f"Arquivo: uf{file}-01.cnf, SA_MAX: {sa_max}, Média: {mean_energies:.2f}, Desvio: {std_energies:.2f}\n")
+                print(f"Arquivo: uf{file}-01.cnf, SA_MAX: {sa_max}, Média: {mean_energies:.2f}, Desvio: {std_energies:.2f}")
+                f.write("\nResultados\n")
+                print("Resultados")
+                f.write(f"Arquivo: uf{file}-01.cnf, SA_MAX: {sa_max}, Média: {mean_results:.2f}, Desvio: {std_results:.2f}\n")
+                print(f"Arquivo: uf{file}-01.cnf, SA_MAX: {sa_max}, Média: {mean_results:.2f}, Desvio: {std_results:.2f}")
 
             # salvar resultados para a média e desvio
             stats_por_file.append(resultados)

@@ -1,0 +1,54 @@
+
+Energias
+Arquivo: uf20-01.cnf, SA_MAX: 1, Média: 6.50, Desvio: 3.47
+
+Resultados
+Arquivo: uf20-01.cnf, SA_MAX: 1, Média: 0.80, Desvio: 0.85
+
+Energias
+Arquivo: uf20-01.cnf, SA_MAX: 5, Média: 7.18, Desvio: 3.39
+
+Resultados
+Arquivo: uf20-01.cnf, SA_MAX: 5, Média: 0.17, Desvio: 0.53
+
+Energias
+Arquivo: uf20-01.cnf, SA_MAX: 10, Média: 7.34, Desvio: 3.22
+
+Resultados
+Arquivo: uf20-01.cnf, SA_MAX: 10, Média: 0.03, Desvio: 0.18
+
+Energias
+Arquivo: uf100-01.cnf, SA_MAX: 1, Média: 35.14, Desvio: 11.74
+
+Resultados
+Arquivo: uf100-01.cnf, SA_MAX: 1, Média: 12.43, Desvio: 3.09
+
+Energias
+Arquivo: uf100-01.cnf, SA_MAX: 5, Média: 31.41, Desvio: 13.39
+
+Resultados
+Arquivo: uf100-01.cnf, SA_MAX: 5, Média: 5.67, Desvio: 1.56
+
+Energias
+Arquivo: uf100-01.cnf, SA_MAX: 10, Média: 30.70, Desvio: 14.16
+
+Resultados
+Arquivo: uf100-01.cnf, SA_MAX: 10, Média: 3.93, Desvio: 1.48
+
+Energias
+Arquivo: uf250-01.cnf, SA_MAX: 1, Média: 90.75, Desvio: 23.46
+
+Resultados
+Arquivo: uf250-01.cnf, SA_MAX: 1, Média: 43.53, Desvio: 6.25
+
+Energias
+Arquivo: uf250-01.cnf, SA_MAX: 5, Média: 78.44, Desvio: 30.06
+
+Resultados
+Arquivo: uf250-01.cnf, SA_MAX: 5, Média: 16.10, Desvio: 3.29
+
+Energias
+Arquivo: uf250-01.cnf, SA_MAX: 10, Média: 75.82, Desvio: 32.76
+
+Resultados
+Arquivo: uf250-01.cnf, SA_MAX: 10, Média: 9.93, Desvio: 2.48
