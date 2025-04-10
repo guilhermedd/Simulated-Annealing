@@ -36,27 +36,26 @@
 
 Foi no século XX que se iniciou a busca pela resolução de problemas NP, NP-Hard e NP-Completo usando ferramentas computacionais. 
 %
-Estas portanto, foram, em sua maioria, desenvolvidos com base em algoritmos heurísticos – alicerçados em técnicas de busca de solução não necessariamente ótima, mas sim satisfatória –. 
+Estas, portanto, foram, em sua maioria, desenvolvidos com base em algoritmos heurísticos – alicerçados em técnicas de busca de solução não necessariamente ótimas, mas sim satisfatórias. – 
 %
-Sendo assim, alguns destes tornaram-se mais disseminados na literatura científica, como a \textbf{Busca Gulosa}, \textbf{Algoritmo A*}, \textbf{Subida de Encosta} e \textbf{Simulated Annealing}. 
+Sendo assim, alguns destes tornaram-se mais disseminados na literatura científica, como a \textbf{Busca Gulosa}, \textbf{Algoritmo A*}, \textbf{Subida de Encosta} e \textbf{Simulated Annealing} \cite{kokashHeuristicIntro}. 
 
 O método de \textbf{Simulated Annealing} teve sua lógica concebida a partir do método de anelização de materiais, Metropolis, desenvolvido por Gibbs em 1953 \cite{metropolis1953equation}.
 %
-Basado na fabricação de aneis, este método usa como base o fato de que, quanto mais quente está o material, maior se torna a facilidade de modelá-lo.
-%
-Sob o mesmo ponto de vista, este método consiste em uma sequencia de temperaturas decrescentes em que, quanto maior a temperatura atual, mais aleatorizada são as otimizações geradas pelo algoritmo, sendo que, quando a temperatura chegar a um certo ponto idealizando a otimização do resultado conforme decresce a temperatura, até que esta se torne mínima.
+Baseado na fabricação de anéis, este método usa como base o fato de que, quanto mais quente está o material, maior se torna a facilidade de moldá-lo%
+Sob o mesmo ponto de vista, este método consiste em uma sequência de temperaturas decrescentes em que, quanto maior a temperatura atual, mais aleatorizadas são as otimizações geradas pelo algoritmo, sendo que, quando a temperatura chegar a um certo ponto, idealizando a otimização do resultado conforme decresce a temperatura, até que esta se torne mínima \cite{bertsimas1993simulated}.
 
-Um problema muito conhecido e discutido na literatura, que é capaz de ser resolvido por algoritmos heuristicos, é o problema da satisfabilidade (SAT), que consiste em, dado um conjunto de cláusulas disjuntivas na forma normal conjuntiva, determinar se existe uma atribuição de valores lógicos (\textit{verdadeiro} ou \textit{falso}) às variáveis envolvidas que satisfaça toda a expressão.
+Um problema muito conhecido e discutido na literatura, que é capaz de ser resolvido por algoritmos heurísticos, é o problema da satisfabilidade (SAT), que consiste em, dado um conjunto de cláusulas disjuntivas na forma normal conjuntiva, determinar se existe uma atribuição de valores lógicos (\textit{verdadeiro} ou \textit{falso}) às variáveis envolvidas que satisfaça toda a expressão.
 %
 Cada cláusula é composta por uma disjunção (operador lógico $\lor$) de literais (variáveis ou suas negações), e a fórmula booleana global é uma conjunção (operador lógico $\land$) dessas cláusulas. Formalmente:
 
 \begin{equation}
-\bigwedge_{i=1}^{m} \left( \bigvee_{j=1}^{k} l_{ij} \right)
+(A \lor B \lor C \lor ...) \land (D \lor E \lor F \lor ...) \land ...
 \end{equation}
 
-Ao longo deste relatório, será abordado uma proposta de implementação de do \textbf{Simulated Annealing} para resolução de uma variante do SAT, conhecido como SAT-3, que consiste em três variáveis por cláusula no problema SAT.
+Ao longo deste relatório, será abordada uma proposta de implementação de do \textbf{Simulated Annealing} para resolução de uma variante do SAT, conhecido como SAT-3, que consiste em três variáveis por cláusula no problema SAT.
 
-Este relatório está organizado da seguinte maneira: a seção 2 apresenta estratégias utilizadas, descrições, justificativas de escolhas, fórmulas utilizadas e descrições. Em seguida, na seção 3 são abordadas descrições dos experimentos, configurações utilizadas e descrições dos resultados obtidos. Outrossim, na seção 4 expõem-se considerações sobre os resultados obtidos e análises críticas sobre os mesmos. Por fim, na seção 5 mostra-se considerações sobre o trabalho desenvolvido e identificação de direcionamentos futuros na pesquisa.
+Este relatório está organizado da seguinte maneira: a seção 2 apresenta estratégias utilizadas, descrições, justificativas de escolhas, fórmulas utilizadas e descrições. Em seguida, na seção 3 são abordadas descrições dos experimentos, configurações utilizadas e descrições dos resultados obtidos. Outrossim, na seção 4 expõem-se considerações sobre os resultados obtidos e análises críticas sobre os mesmos. Por fim, na seção 5 mostram-se considerações sobre o trabalho desenvolvido e identificação de direcionamentos futuros na pesquisa.
 
 
 % Justificativa e motivação.
@@ -109,7 +108,7 @@ O terceiro passo (resfriamento) corresponde ao passo \ref{passo:1} do codigo de 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1\textwidth]{pasta_.jpeg}
+  \includegraphics[width=1\textwidth]{imgs/pasta_.jpeg}
   \caption{Diagrama do algoritmo de \textbf{Simulated Annealing}}
   \label{fig:metodologia}
   \end{figure}
@@ -130,21 +129,21 @@ Nestas configurações foram obtidos resultados para bases de SAT-3 de 20, 100 e
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{../../melhores_sa_20.png}
+  \includegraphics[width=.9\textwidth]{imgs/melhores_sa_20.png}
   \caption{Convergência para 20 entradas}
   \label{fig:metodologia}
   \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{../../melhores_sa_100.png}
+  \includegraphics[width=.9\textwidth]{imgs/melhores_sa_100.png}
   \caption{Convergência para 100 entradas}
   \label{fig:metodologia}
    \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{../../melhores_sa_250.png}
+  \includegraphics[width=.9\textwidth]{imgs/melhores_sa_250.png}
   \caption{Convergência para 250 entradas}
   \label{fig:metodologia}
   \end{figure}
@@ -195,21 +194,21 @@ Além disso, é possível verificar a seguinte tabela com média e desvio padrã
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{../../boxplot_20.png}
+  \includegraphics[width=.9\textwidth]{imgs/boxplot_20.png}
   \caption{Boxplots para 20 entradas}
   \label{fig:metodologia}
   \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{../../boxplot_100.png}
+  \includegraphics[width=.9\textwidth]{imgs/boxplot_100.png}
   \caption{Boxplots para 100 entradas}
   \label{fig:metodologia}
    \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{../../boxplot_250.png}
+  \includegraphics[width=.9\textwidth]{imgs/boxplot_250.png}
   \caption{Boxplots para 250 entradas}
   \label{fig:metodologia}
   \end{figure}
