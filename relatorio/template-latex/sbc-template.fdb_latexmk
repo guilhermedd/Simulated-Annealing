@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex sbc-template"] 1744218618.77107 "sbc-template.aux" "sbc-template.bbl" "sbc-template" 1744218646.9804 0
+["bibtex sbc-template"] 1744218618.77107 "sbc-template.aux" "sbc-template.bbl" "sbc-template" 1744269339.95545 0
   "./sbc-template.bib" 1744039031.21881 725 bdc459d9953eda08f21705ef20e3b912 ""
   "./sbc.bst" 1744039039.26342 21864 a668496cca21cfdd211f7fb5f0d57565 ""
-  "sbc-template.aux" 1744218646.5657 3459 af88402751cf71d3af7f5eae046927a5 "pdflatex"
+  "sbc-template.aux" 1744269339.72277 3459 244bd4eb4cc9605b5bb11e07f88489dc "pdflatex"
   (generated)
   "sbc-template.bbl"
   "sbc-template.blg"
   (rewritten before read)
-["pdflatex"] 1744218644.91236 "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1744218646.98066 2
+["pdflatex"] 1744269338.7062 "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1744269339.9556 2
   "../../boxplot_100.png" 1744216620.03345 23791 9e1af1529b0bed60762259fff55e5767 ""
   "../../boxplot_20.png" 1744216422.95317 23550 5fc72d73a2f8baa0a5ca226ac95970e4 ""
   "../../boxplot_250.png" 1744217100.02118 22781 79298569f6ce6fce3c09ab95c896f387 ""
   "../../melhores_sa_100.png" 1744216619.96513 91350 a728c27f54d74ac628a57554d3700b8c ""
   "../../melhores_sa_20.png" 1744216422.88365 100314 7a4dc95e80108768280cd3e9884bc447 ""
   "../../melhores_sa_250.png" 1744217099.96079 80419 6328fcb48d6eeea5bd9865a2e27a1ba6 ""
-  "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" 1744218642.47681 8820 d55c9b08e52a71a0a7814bd3afa01b0f ""
+  "/Users/cesardesouza/Desktop/Simulated-Annealing/relatorio/template-latex/sbc-template.tex" 1744269337.07782 9020 34d054926c8a494ee461fee8cd5dfea0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -76,6 +76,7 @@
   "/usr/local/texlive/2025/texmf-dist/tex/latex/caption/caption3.sty" 1696191071 72619 ee90b6612147680fd73c3b1406a74245 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1739306980 46850 d87daedc2abdc653769a6f1067849fe0 ""
+  "/usr/local/texlive/2025/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def" 1713382759 19440 9da9dcbb27470349a580fca7372d454b ""
@@ -101,10 +102,10 @@
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741576009 3345735 cd75e12310bf637a788e14a774aa4386 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "pasta_.jpeg" 1744136168.51363 109958 238620760059d4fc70e47de9895be883 ""
-  "sbc-template.aux" 1744218646.5657 3459 af88402751cf71d3af7f5eae046927a5 "pdflatex"
-  "sbc-template.bbl" 1744218618.93763 49 0eba253fc001332e731e8aba3f23127b "bibtex sbc-template"
+  "sbc-template.aux" 1744269339.72277 3459 244bd4eb4cc9605b5bb11e07f88489dc "pdflatex"
+  "sbc-template.bbl" 1744269263.29867 49 0eba253fc001332e731e8aba3f23127b "bibtex sbc-template"
   "sbc-template.sty" 1744039036.70466 6074 ecc54df5124d8db4ac67c42cc728f3a5 ""
-  "sbc-template.tex" 1744218642.47681 8820 d55c9b08e52a71a0a7814bd3afa01b0f ""
+  "sbc-template.tex" 1744269337.07782 9020 34d054926c8a494ee461fee8cd5dfea0 ""
   (generated)
   "sbc-template.aux"
   "sbc-template.log"

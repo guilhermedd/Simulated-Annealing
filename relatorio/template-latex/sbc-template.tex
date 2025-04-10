@@ -2,6 +2,7 @@
 
 \usepackage{sbc-template}
 \usepackage{graphicx,url}
+\usepackage{float}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage[latin1]{inputenc}  
@@ -106,7 +107,7 @@ No segundo passo (iteração por temperatura) da Figura \ref{fig:metodologia} a 
 
 O terceiro passo (resfriamento) corresponde ao passo \ref{passo:1} do codigo de \ref{pseudocodigo}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{pasta_.jpeg}
   \caption{A typical figure}
@@ -127,21 +128,21 @@ Foi com a temperatura inicial = 1000 = iterações por temperatura taa de resfri
 
 Nestas configurações foram obtidos resultados para bases de SAT-3 de 20, 100 e 250 entradas como os seguintes gráficos de convergência:% to pensando em fazer o \ref pra cada um mas sla tb
 
-\begin{figure}[ht!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{../../melhores_sa_20.png}
   \caption{Convergência para 20 entradas}
   \label{fig:metodologia}
   \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{../../melhores_sa_100.png}
   \caption{Convergência para 100 entradas}
   \label{fig:metodologia}
    \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{../../melhores_sa_250.png}
   \caption{Convergência para 250 entradas}
@@ -151,7 +152,7 @@ Nestas configurações foram obtidos resultados para bases de SAT-3 de 20, 100 e
 
 Além disso, é possível verificar a seguinte tabela com média e desvio padrão de 30 execuções do experimento, apontados pelos consecutivos boxplots.
 
-\begin{table}[ht!]
+\begin{table}[H]
 \centering
 \caption{Média e Desvio Padrão dos Resultados Obtidos}
 \begin{tabular}{|c|c|c|}
@@ -164,21 +165,21 @@ Além disso, é possível verificar a seguinte tabela com média e desvio padrã
 \label{tab:resultados}
 \end{table}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{../../boxplot_20.png}
   \caption{Boxplots para 20 entradas}
   \label{fig:metodologia}
   \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{../../boxplot_100.png}
   \caption{Boxplots para 100 entradas}
   \label{fig:metodologia}
    \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{../../boxplot_250.png}
   \caption{Boxplots para 250 entradas}
@@ -191,7 +192,7 @@ Dessa maneira, é possível obter uma visão aprofundada da execução do algori
 \label{sec:analise_dos_resultados_obtidos}
 
 % Considerações sobre os resultados obtidos e análises críticas sobre os mesmos.
-Factualmente, torna-se óbvia a observação de que
+Factualmente, torna-se óbvia a observação de que entradas menores produzem resultados limitados, assemelhando-se mais a buscas aleatórias, enquanto entradas maiores produzem resultados mais satisfatórios, com uma convergência mais acentuada.
 
 
 A partir disso, surgem diversas ideias sobre o trabalho desenvolvido e direcionamentos futuros, abordados na seção a seguir.
