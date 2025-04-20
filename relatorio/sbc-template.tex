@@ -77,7 +77,7 @@ O método de \textbf{Simulated Annealing} consiste em:
   \end{itemize}
   
   \item Critério de parada:
-  \begin{itemize}
+  \begin{itemize} \label{passo:2}
     \item Se $T_i \leq T_f$ (temperatura final) ou o sistema atingir convergência (e.g., $\Delta E \approx 0$ por $k$ iterações consecutivas)
     \item Retornar o $\text{estado}_0$ como solução
     \item Caso contrário, reduzir a temperatura ($T_i \leftarrow \alpha T_i$, com $0 < \alpha < 1$) e retornar ao Passo~\ref{passo:1}
@@ -89,29 +89,49 @@ O método de \textbf{Simulated Annealing} consiste em:
 A aplicação do método de \textbf{Simulated Annealing} para a otimização do problema do SAT-3 foi realizada por meio da linguagem de programação \textit{Python}, junto com a biblioteca \textit{Numpy}.
 %
 A Figura \ref{fig:metodologia} retrata o passo a passo de como foi implementado este algoritmo.
-%
-O passo 1 (inicialização) consiste em realizar a inicialização do sistema:
 
-\begin{itemize}
-  \item Temperatura inicial $T_0$ = 1000
-  \item Taxa de resfriamento \alpha = 0.99
-  \item Temperatura final \(T_f = 0.1\)
-  \item Número de iterações por temperatura $N$ = 1000
-\end{itemize}
+A Figura~\ref{fig:metodologia} apresenta as etapas do algoritmo, que foi implementado da seguinte maneira:
 
-No segundo passo (iteração por temperatura) da Figura \ref{fig:metodologia} a fórmula de probabilidade de aceitação de estados com pior energia que foi adotada, foi:
-\begin{equation}
-  P_{\text{accept}} = \exp\left(-\frac{\Delta E}{T_i}\right)
-\end{equation}
-
-O terceiro passo (resfriamento) corresponde ao passo \ref{passo:1} do codigo de \ref{pseudocodigo}.
+\begin{enumerate}
+    \item \textbf{Inicialização}:
+    \begin{itemize}
+        \item Temperatura inicial $T_0 = 1000$
+        \item Taxa de resfriamento $\alpha = 0.99$
+        \item Temperatura final $T_f = 0.1$
+        \item Número de iterações por temperatura $N = 1000$
+        \item $SA_{max} = 1$, 5 ou 10 (limite mínimo de temperatura)
+    \end{itemize}
+    
+    \item \textbf{Iteração por temperatura}:
+    \begin{enumerate}
+        \item Gerar nova solução aleatória (modificando uma variável)
+        \item Calcular $\delta E = E_{\text{nova}} - E_{\text{atual}}$
+        \item Se $\delta E < 0$, aceitar a nova solução
+        \item Caso contrário, aceitar com probabilidade:
+        \begin{equation}
+            P_{\text{accept}} = \exp\left(-\frac{\Delta E}{T_i}\right)
+            \label{eq:probabilidade}
+        \end{equation}
+    \end{enumerate}
+    
+    \item \textbf{Resfriamento}:
+    \begin{enumerate}
+        \item Atualizar temperatura: $T_{i+1} = \alpha T_i$ \eqref{eq:resfriamento}
+        \item Verificar critério de parada:
+        \begin{itemize}
+            \item Se $T_i \leq SA_{max}$ $\rightarrow$ Parar
+            \item Caso contrário $\rightarrow$ Voltar ao passo 2
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=1\textwidth]{imgs/pasta_.jpeg}
-  \caption{Diagrama do algoritmo de \textbf{Simulated Annealing}}
-  \label{fig:metodologia}
-  \end{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/final_diagram.png}
+    \caption{Diagrama do algoritmo de \textbf{Simulated Annealing}}
+    \label{fig:metodologia}
+\end{figure}
+
 % descrições e justificativas das escolhas.
 % Fórmulas utilizadas, descrições e justificativas.
 
@@ -131,21 +151,21 @@ Nestas configurações foram obtidos resultados para bases de SAT-3 de 20, 100 e
   \centering
   \includegraphics[width=.9\textwidth]{imgs/melhores_sa_20.png}
   \caption{Convergência para 20 entradas}
-  \label{fig:metodologia}
+  \label{fig:convergencia20}
   \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{imgs/melhores_sa_100.png}
   \caption{Convergência para 100 entradas}
-  \label{fig:metodologia}
+  \label{fig:convergencia100}
    \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{imgs/melhores_sa_250.png}
   \caption{Convergência para 250 entradas}
-  \label{fig:metodologia}
+  \label{fig:convergencia250}
   \end{figure}
 
 
@@ -196,21 +216,21 @@ Além disso, é possível verificar a seguinte tabela com média e desvio padrã
   \centering
   \includegraphics[width=.9\textwidth]{imgs/boxplot_20.png}
   \caption{Boxplots para 20 entradas}
-  \label{fig:metodologia}
+  \label{fig:boxplot20}
   \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{imgs/boxplot_100.png}
   \caption{Boxplots para 100 entradas}
-  \label{fig:metodologia}
+  \label{fig:boxplot100}
    \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.9\textwidth]{imgs/boxplot_250.png}
   \caption{Boxplots para 250 entradas}
-  \label{fig:metodologia}
+  \label{fig:boxplot250}
   \end{figure}
 
 Dessa maneira, é possível obter uma visão aprofundada da execução do algoritmo, discutida na seção a seguir.
