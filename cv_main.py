@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 from src.annealing_model import AnnealingModel
 import numpy as np
-import statistics
 import random
 import math
 from itertools import chain
@@ -9,13 +8,14 @@ from itertools import chain
 SA_Max = 100 #iterações para equilibrio termico
 TF = 0.1 #temperatura minima final
 alpha = 0.95 #taxa de decaimento
-file = "formulas/eil51-tsp.txt"
+file_51 = "formulas/eil51-tsp.txt"
+file_101 = "formulas/kroA100-tsp.txt"
 
 class SA():
     def __init__(self):
         self.T = 100000
         self.iterT = 0
-        self.nxy = cv_carregar_instancia(file)
+        self.nxy = cv_carregar_instancia(file_51)
         self.matriz = cv_fazer_matriz_n_n(self.nxy)
         self.solucoes = []
         self.solucoes = cv_gerar_nova_solucao(self.solucoes, self.matriz)
@@ -40,8 +40,7 @@ class SA():
                         self.atual = vizinho
             self.T *= alpha     
             self.iterT = 0
-        return self.melhorSolucaoObtidaAteEntao
-    
+        return self.melhorSolucaoObtidaAteEntao  
 
 def cv_carregar_instancia(file):
     """Carrega uma lista de pontos N no plano em, X e Y."""
@@ -69,13 +68,13 @@ def cv_fazer_matriz_n_n(nxy):
             matriz[j][i] = distancia
     return matriz
 
-# TODO  sepah que fazer no src
 def cv_gerar_nova_solucao(solucoes, matriz):
-    nova_solucao = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+    num_cidades = len(matriz[0])
+    nova_solucao = list(range(1, num_cidades + 1))
+
     random.shuffle(nova_solucao)
     if nova_solucao not in solucoes:
         solucoes.append(nova_solucao)
-
     return solucoes
 
 def cv_calcular_distancia_total_da_solucao(solucao, matriz):
@@ -95,8 +94,6 @@ def pitagoras(x1, y1, x2, y2) -> float:
     y2 = int(y2)
     pitagoras = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
     return pitagoras
-
-
 
 if __name__ == "__main__":
     sa = SA()
