@@ -12,14 +12,12 @@ def cv_main():
     file = "formulas/eil51-tsp.txt"
     nxy = cv_carregar_instancia(file)
     matriz = cv_fazer_matriz_n_n(nxy)
-    print(matriz)
     solucoes = []
     solucoes = cv_gerar_nova_solucao(solucoes, matriz)
 
-    distancia_total_placeholder = cv_calcular_distancia_total_da_solucao(solucoes[len(solucoes)], matriz)
+    distancia_total_placeholder = cv_calcular_distancia_total_da_solucao(solucoes[-1], matriz)
     print(f"Distancia total da solucao: {distancia_total_placeholder}")
 
-    cv_gerar_nova_solucao()
 
     return
 
@@ -41,11 +39,12 @@ def cv_fazer_matriz_n_n(nxy):
 
     for i in range(last):
         for j in range(i):
-            distancia_entre_pontos = pitagoras(
+            distancia = pitagoras(
                 x1= nxy[i][1], y1= nxy[i][2], 
                 x2= nxy[j][1], y2 = nxy[j][2]
             )
-            matriz[i][j] = distancia_entre_pontos
+            matriz[i][j] = distancia
+            matriz[j][i] = distancia
     return matriz
 
 # TODO  sepah que fazer no src
@@ -59,8 +58,11 @@ def cv_gerar_nova_solucao(solucoes, matriz):
 
 def cv_calcular_distancia_total_da_solucao(solucao, matriz):
     distancia_total = 0
-    for i in range(len(solucao) - 3):
-        distancia_total += matriz[solucao[i]][solucao[i + 1]] + matriz[solucao[i + 1]][solucao[i + 2]]
+    last = len(solucao)
+    for k in range(last):
+        i = solucao[k]
+        j = solucao[(k + 1) % last]  
+        distancia_total += matriz[i-1][j-1]
     return distancia_total
 
 def pitagoras(x1, y1, x2, y2) -> float: 
