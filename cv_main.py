@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from src.annealing_model import AnnealingModel
 import numpy as np
 import statistics
+import random
 from itertools import chain
 
 
@@ -10,13 +11,16 @@ from itertools import chain
 def cv_main():
     file = "formulas/eil51-tsp.txt"
     nxy = cv_carregar_instancia(file)
-    matrix = cv_fazer_matriz_n_n(nxy)
-    
-    solucao_placeholder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
-    distancia_total_placeholder = cv_calcular_distancia_total_da_solucao(solucao_placeholder, matrix)
+    matriz = cv_fazer_matriz_n_n(nxy)
+    print(matriz)
+    solucoes = []
+    solucoes = cv_gerar_nova_solucao(solucoes, matriz)
+
+    distancia_total_placeholder = cv_calcular_distancia_total_da_solucao(solucoes[len(solucoes)], matriz)
     print(f"Distancia total da solucao: {distancia_total_placeholder}")
 
-    cv_gerar_vizinho()
+    cv_gerar_nova_solucao()
+
     return
 
 def cv_carregar_instancia(file):
@@ -31,14 +35,12 @@ def cv_carregar_instancia(file):
     return nxy
 
 def cv_fazer_matriz_n_n(nxy):
-    """faz matriz diagonal (NAO TA DIAGONAL MAS N FAZ MAL - faz sim...) de distancias entre os pontos"""
+    """faz matriz diagonal (.) de distancias entre os pontos"""
     last = len(nxy)
-    matriz = [[0 for _ in range(last)] for _ in range(last)]
-    i = 0
-    j = 0
+    matriz = [[0] * last for _ in range(last)]
 
-    for i in range(0, last):
-        for j in range(0, last):
+    for i in range(last):
+        for j in range(i):
             distancia_entre_pontos = pitagoras(
                 x1= nxy[i][1], y1= nxy[i][2], 
                 x2= nxy[j][1], y2 = nxy[j][2]
@@ -47,8 +49,13 @@ def cv_fazer_matriz_n_n(nxy):
     return matriz
 
 # TODO  sepah que fazer no src
-def cv_gerar_vizinho():
-    return
+def cv_gerar_nova_solucao(solucoes, matriz):
+    nova_solucao = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+    random.shuffle(nova_solucao)
+    if nova_solucao not in solucoes:
+        solucoes.append(nova_solucao)
+
+    return solucoes
 
 def cv_calcular_distancia_total_da_solucao(solucao, matriz):
     distancia_total = 0
