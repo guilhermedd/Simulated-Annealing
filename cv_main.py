@@ -11,9 +11,12 @@ def cv_main():
     file = "formulas/eil51-tsp.txt"
     nxy = cv_carregar_instancia(file)
     matrix = cv_fazer_matriz_n_n(nxy)
-    cv_gerar_vizinho()
-    cv_calcular_energia()
+    
+    solucao_placeholder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+    distancia_total_placeholder = cv_calcular_distancia_total_da_solucao(solucao_placeholder, matrix)
+    print(f"Distancia total da solucao: {distancia_total_placeholder}")
 
+    cv_gerar_vizinho()
     return
 
 def cv_carregar_instancia(file):
@@ -25,17 +28,14 @@ def cv_carregar_instancia(file):
             if line == "EOF\n":
                 break
             nxy.append(line.split())
-            
-    print(nxy)
     return nxy
 
 def cv_fazer_matriz_n_n(nxy):
-    """faz matriz diagonal (NAO TA DIAGONAL MAS N FAZ MAL) de distancias entre os pontos"""
+    """faz matriz diagonal (NAO TA DIAGONAL MAS N FAZ MAL - faz sim...) de distancias entre os pontos"""
     last = len(nxy)
     matriz = [[0 for _ in range(last)] for _ in range(last)]
     i = 0
     j = 0
-    print(last)
 
     for i in range(0, last):
         for j in range(0, last):
@@ -44,16 +44,17 @@ def cv_fazer_matriz_n_n(nxy):
                 x2= nxy[j][1], y2 = nxy[j][2]
             )
             matriz[i][j] = distancia_entre_pontos
-    print(matriz)
-
     return matriz
 
+# TODO  sepah que fazer no src
 def cv_gerar_vizinho():
     return
 
-def cv_calcular_energia():
-    return
-
+def cv_calcular_distancia_total_da_solucao(solucao, matriz):
+    distancia_total = 0
+    for i in range(len(solucao) - 3):
+        distancia_total += matriz[solucao[i]][solucao[i + 1]] + matriz[solucao[i + 1]][solucao[i + 2]]
+    return distancia_total
 
 def pitagoras(x1, y1, x2, y2) -> float: 
     """Calcula a distância entre dois pontos."""
