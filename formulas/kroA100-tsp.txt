@@ -1,9 +1,3 @@
-NAME: kroA100
-TYPE: TSP
-COMMENT: 100-city problem
-DIMENSION: 100
-EDGE_WEIGHT_TYPE : EUC_2D
-NODE X-coordinate Y-coordinate
 1 1380 939
 2 2848 96
 3 3510 1671

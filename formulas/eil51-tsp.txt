@@ -1,8 +1,3 @@
-NAME : eil51
-COMMENT : 51-city problem
-DIMENSION : 51
-EDGE_WEIGHT_TYPE : EUC_2D
-NODE X-coordinate Y-coordinate
 1 37 52
 2 49 49
 3 52 64
