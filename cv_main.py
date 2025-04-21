@@ -11,6 +11,9 @@ alpha = 0.95 #taxa de decaimento
 file_51 = "formulas/eil51-tsp.txt"
 file_101 = "formulas/kroA100-tsp.txt"
 
+historico_solucoes = []
+historico_temperaturas = []
+
 class SA():
     def __init__(self):
         self.T = 100000
@@ -38,6 +41,10 @@ class SA():
                     x = random.random()
                     if(x < math.exp( -delta / self.T)):
                         self.atual = vizinho
+                
+                historico_solucoes.append(sa.atual)
+                historico_temperaturas.append(sa.T)
+
             self.T *= alpha     
             self.iterT = 0
         return self.melhorSolucaoObtidaAteEntao  
@@ -95,6 +102,57 @@ def pitagoras(x1, y1, x2, y2) -> float:
     pitagoras = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
     return pitagoras
 
+
+
+
+
+
+def plotar_solucao(solucao, nxy):
+    """Plota o gráfico da solução gerada."""
+    x = []
+    y = []
+    for cidade in solucao:
+        x.append(int(nxy[cidade - 1][1]))
+        y.append(int(nxy[cidade - 1][2]))
+    # Fechar o ciclo voltando ao ponto inicial
+    x.append(x[0])
+    y.append(y[0])
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, y, marker='o', linestyle='-', color='b')
+    plt.title("Solução do Simulated Annealing")
+    plt.xlabel("Coordenada X")
+    plt.ylabel("Coordenada Y")
+    plt.grid()
+    plt.show()
+
+def plotar_convergencia(historico_solucoes, historico_temperaturas):
+    """Plota a convergência da solução e a temperatura ao longo das iterações."""
+    iteracoes = list(range(len(historico_solucoes)))
+
+    fig, ax1 = plt.subplots(figsize=(8, 6))
+
+    # Eixo primário: Solução
+    ax1.plot(iteracoes, historico_solucoes, 'b-', label="Solução (Distância)")
+    ax1.set_xlabel("Iterações")
+    ax1.set_ylabel("Solução (Distância)", color='b')
+    ax1.tick_params(axis='y', labelcolor='b')
+    ax1.grid()
+
+    # Eixo secundário: Temperatura
+    ax2 = ax1.twinx()
+    ax2.plot(iteracoes, historico_temperaturas, 'r--', label="Temperatura")
+    ax2.set_ylabel("Temperatura", color='r')
+    ax2.tick_params(axis='y', labelcolor='r')
+
+    # Título e legenda
+    fig.suptitle("Convergência da Solução e Temperatura")
+    fig.tight_layout()
+    plt.show()
+
 if __name__ == "__main__":
     sa = SA()
-    print(sa.run())
+    melhor_solucao = sa.run()
+    print(f"Melhor solução encontrada: {melhor_solucao}")
+    plotar_solucao(sa.solucoes[-1], sa.nxy)
+    plotar_convergencia(historico_solucoes, historico_temperaturas)
