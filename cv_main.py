@@ -107,3 +107,20 @@ if __name__ == "__main__":
                 desvio = statistics.stdev(energias)
                 f.write(f"\tSA={sa_max}\t{media:.2f}\t\t\t{desvio:.2f}\n")
             f.write("\n")
+
+
+
+def cv_main():
+    return
+
+def cv_carregar_instancia():
+    return
+
+def cv_fazer_matriz_n_n():
+    return
+
+def cv_gerar_vizinho():
+    return
+
+def cv_calcular_energia():
+    return
